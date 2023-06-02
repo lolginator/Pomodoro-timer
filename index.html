@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <title>Pomadoro</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="line">
+                <div class="header__top">
+                    <div class="header__title">
+                        <img src="image/pomodoro.png" alt=""> Pomodoro
+                    </div>
+                    <div class="header__lng">
+                        <a href="#!" class="options"><img src="image/options.png" alt="" width="28px" height="28px"></a>
+                        <a href="#!">RU</a>
+                        <a href="#!"><span>EN</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="time">
+            <div class="container">
+                <div class="time__content">
+                    <!--  -->
+                    <div class="time__slider">
+                        <div class="time__slider-inner">
+                            <div class="slide-1">
+                                <a href="#!">Work</a>
+                            </div>
+                            <div class="slide-2">
+                                <a href="#!"> Break</a>
+                            </div>
+                            <div class="slide-3">
+                                <a href="#!">LongBreak</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="time__period">
+                        <a href="#!" class="left"><img src="image/left.png" alt=""></a>
+                        <div class="time__period-container">
+                            <div class="time__period-inner">
+                                <!--  -->
+                                <p id="min" class="value-1">25</p>
+                                <p>:</p>
+                                <p id="sec">00</p>
+                                <!--  -->
+                            </div>
+                        </div>
+                        <a href="#!" class="right"><img src="image/right.png" alt=""></a>
+                    </div>
+                    <div class="time__buttons">
+                        <div class="up-mini">
+                            <a href="#!" class="btn">
+                                <img src="image/up.png" alt="" width="50px" height="50px">
+                            </a>
+                        </div>
+                        <!--  -->
+                        <div class="up">
+                            <a href="#!" class="btn">
+                                <img src="image/up.png" alt="" width="65px" height="65px">
+                            </a>
+                        </div>
+                        <!--  -->
+                        <div class="start">
+                            <a href="#!" class="btn__start">
+                                <audio src="image/lock.mp3"></audio>
+                                <img src="image/start.png" alt="" class="start__btn">
+                            </a>
+                        </div>
+                        <!--  -->
+                        <div class="down">
+                            <a href="#!" class="btn">
+                                <img src="image/dwon.png" alt="" width="65px" height="65px">
+                            </a>
+                        </div>
+                        <!--  -->
+                        <div class="down__mini">
+                            <a href="#!" class="btn">
+                                <img src="image/dwon.png" alt="" width="50px" height="50px">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="popup">
+            <div class="popup__container">
+                <div class="popup__line">
+                    <div class="popup__top">
+                        <div class="popup__title">
+                            Settings
+                        </div>
+                        <div class="popup__btn">
+                            <a href="#!" class="popup__close"><img src="image/close.png" alt="" width="25px"
+                                    height="25px"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup__content">
+
+                    <div class="popup__baby">
+                        <label for="">
+                            <input type="radio" value="baby" name="radio">
+                            <span>Baby step</span>
+                            <p>10 min • 5 min • 10 min</p>
+                        </label>
+                    </div>
+
+                    <div class="popup__popular">
+                        <label for="">
+                            <input type="radio" value="popular" name="radio" checked>
+                            <span>Popular</span>
+                            <p>25 min • 5 min • 15 min</p>
+                        </label>
+                    </div>
+
+                    <div class="popup__medium">
+                        <label for="">
+                            <input type="radio" value="medium" name="radio">
+                            <span>Medium</span>
+                            <p>40 min • 8 min • 20 min</p>
+                        </label>
+                    </div>
+
+                    <div class="popup__hard">
+                        <label for="">
+                            <input type="radio" value="hard" name="radio">
+                            <span>Hard</span>
+                            <p>60 min • 10 min • 25 min</p>
+                        </label>
+                    </div>
+
+                    <div class="popup__custom">
+                        <label for="">
+                            <input type="radio" value="custom" name="radio">
+                            <span>Custom</span>
+                            <div class="slider1">
+                                <div class="slider__title">
+                                    <output for="fader" id="volume">25</output>
+                                    <p>Pomodoro</p>
+                                </div>
+                                <input type="range" id='fader' min="0" max="60" value="25" step="1" disabled class="f"
+                                    oninput="outUpdate(value)">
+                            </div>
+                            <div class="slider1">
+                                <div class="slider__title">
+                                    <output for="fader" id="volume1">05</output>
+                                    <p>Break</p>
+                                </div>
+                                <input type="range" id='fader1' min="0" max="60" value="5" step="1" disabled class="f"
+                                    oninput="outUpdate1(value)">
+                            </div>
+                            <div class="slider1">
+                                <div class="slider__title">
+                                    <output for="fader" id="volume2">15</output>
+                                    <p>Long break</p>
+                                </div>
+                                <input type="range" id='fader2' min="0" max="60" value="15" step="1" disabled class="f"
+                                    oninput="outUpdate2(value)">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pomodoro">
+            <div class="line">
+                <div class="container">
+                    <div class="pomodoro-inner">
+                        <div class="pomodoro__title">
+                            Ответы на ваши вопросы
+                        </div>
+                        <div class="info">
+                            <div class="info__title">
+                                Для чего нужна техника помидора?
+                            </div>
+                            <div class="info__text">
+                                Метод помидора — простая техника тайм-менеджмента, которая помогает работать эффективнее
+                                и
+                                быстрее приступать к выполнению задач. Некоторые называют ее методом помодоро, так как
+                                придумал
+                                технику итальянец Франческо Чирилло, а по-итальянски этот красный круглый овощ
+                                называется
+                                pomodoro.
+                            </div>
+                            <div class="info__title">
+                                Что такое техника помодоро?
+                            </div>
+                            <div class="info__text">
+                                Метод помидора состоит из нескольких простых действий: заводите таймер на 25 минут,
+                                приступаете
+                                к работе, а когда время заканчивается, отправляетесь отдыхать на 5 минут. И так
+                                несколько
+                                раз
+                                подряд. Один 25-минутный спринт и называют помидором.
+                            </div>
+                            <div class="info__title">
+                                Как работает помодоро таймер?
+                            </div>
+                            <div class="info__text">
+                                <ul>
+                                    <li><span>1.Добавьте задачи, </span> над которыми вы собираетесь работать</li>
+                                    <li><span>2.Установите таймер</span> на нужное кол-во времени для выполнения задачи
+                                    </li>
+                                    <li><span>3.Выберите задачу </span>для работы</li>
+                                    <li><span>4.Запустите таймер </span>и сосредоточьтесь на задаче определенное
+                                        кол-вовремени</li>
+                                    <li><span>5.Сделайте перерыв </span>на установленное время, когда прозвенит
+                                        будильник
+                                    </li>
+                                    <li><span>6.Повторяйте, пока </span>не закончите задачи</li>
+                                </ul>
+                            </div>
+                            <div class="info__title">
+                                Почему стоит использовать метод помодоро
+                            </div>
+                            <div class="info__text">
+                                <ul>
+                                    <li>
+                                        <p><img src="image/circle.png" alt="" width="10px" height="10px"><span>Вы знаете
+                                                цену своему времени.</span> Ваше время ценно, независимо
+                                            от
+                                            того,
+                                            платите
+                                            вы за него или
+                                            нет. Методика помогает рассчитать стоимость вашего времени и
+                                            спланировать
+                                            рабочий
+                                            день.
+                                            Если
+                                            вы научились думать о задачах в помидорках, сможете уложиться в сроки и
+                                            целевые
+                                            показатели и
+                                            сохранить баланс между работой и личной жизнью.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><img src="image/circle.png" alt="" width="10px" height="10px"><span>Повышаете
+                                                продуктивность.</span> Метод помогает сконцентрировать
+                                            внимание,
+                                            чтобы
+                                            успевать больше за
+                                            то же время. Вы сосредотачиваетесь на одной задаче и управляете
+                                            отвлекающими
+                                            факторами:
+                                            не
+                                            отвлекаетесь на звонки, письма и побочные задачи.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p> <img src="image/circle.png" alt="" width="10px"
+                                                height="10px"><span>Управляете ожиданиями.</span> Вы точнее оцениваете,
+                                            сколько
+                                            времени
+                                            уйдет на
+                                            конкретную задачу.
+                                            Если знаете, что восьмичасовая работа — это 16 помидорок с перерывами, и
+                                            вы
+                                            не
+                                            успеете
+                                            сделать их за один день, то не будете обманывать себя и других. Сможете
+                                            управлять
+                                            собственными ожиданиями и ожиданиями руководителя, ментора, коллег.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <img src="image/circle.png" alt="" width="10px"
+                                                height="10px"><span>ренируете силу воли.</span> Вы концентрируетесь на
+                                            своих целях,
+                                            потому
+                                            что
+                                            сами
+                                            так
+                                            решили. Вы не
+                                            перекладываете ответственность на блокировщики сайтов, помогающие
+                                            сервисы и
+                                            других
+                                            людей.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <img src="image/circle.png" alt="" width="10px"
+                                                height="10px"><span>Предотвращаете выгорание.</span> Запланированные
+                                            короткие перерывы
+                                            избавляют
+                                            от
+                                            «загнанного»
+                                            ощущения, сохраняют силы и ресурсы. Вы не переутомитесь и не выгорите,
+                                            если будете
+                                            придерживаться этой методики.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__title">
+                        Pomodoro
+                    </div>
+                    <div class="footer__btn">
+                        <ul>
+                            <li><a href="#!">Home</a></li>
+                            <li><a href="#!">Info</a></li>
+                            <li><a href="#!">Menu</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__end">
+                        @Сделано великим Максимом
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
