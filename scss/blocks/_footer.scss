@@ -1,0 +1,39 @@
+.footer{
+    background-color: #2D343C;
+    padding: 72px 0px 51px 0px;
+}
+
+.footer__row{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+
+
+    @include mediaTablet{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 2fr));
+    }
+}
+
+.footer__logo{
+    margin-top: -12px;
+}
+
+.social{
+    margin-top: 20px;
+    display: flex;
+    column-gap: 20px;
+}
+
+
+.footer__nav-list{
+    display: grid;
+    font-size: 14px;
+    gap: 15px;
+
+
+    span{
+        color: $accent;
+    }
+}

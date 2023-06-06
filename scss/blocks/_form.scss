@@ -1,0 +1,55 @@
+.form__input{
+    height: 50px;
+    width: 255px;
+    padding: 12px ;
+    text-align: center;
+    background-color: rgba(255,255,255, 0.2);
+    font-size: 14px;
+
+
+    &::placeholder{
+        color: $placeholder
+    }
+
+
+    
+    &:focus{
+        background-color: rgba(255,255,255, 0.3);
+    }
+
+    @include mediaTablet{
+        width: 100%;
+    }
+}
+
+.form__privacy {
+    text-align: center;
+    font-size: 13px;
+
+    @include mediaTablet{
+        width: 100%;
+    }
+}
+
+.form__btn{
+    height: 50px;
+    width: 255px;
+    padding: 12px;
+    background-color: $accent;
+    text-align: center;
+    color: $white;
+    font-weight: 700;
+
+
+
+
+    &:hover{
+        background-color: saturate($color: $accent, $amount: 10%);
+    }
+
+
+    @include mediaTablet{
+        width: 100%;
+    }
+
+}
